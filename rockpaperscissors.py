@@ -8,9 +8,9 @@ def main():
             return "It's a draw!"
 
         elif (
-                (user_choice == "scissors" and computer_choice == "paper") or
-                (user_choice == "rock" and computer_choice == "scissors") or
-                (user_choice == "paper" and computer_choice == "rock")
+                (user == "🪨 Rock" and computer == "✂️ Scissors") or
+                (user == "📃 Paper" and computer == "🪨 Rock") or
+                (user == "✂️ Scissors" and computer == "📃 Paper")
         ):
 
             return "You win!"
@@ -18,7 +18,7 @@ def main():
             return "Computer wins!"
 
     def make_choice(user_choice):
-        computer_choice = random.choice(["scissors", "rock", "paper"])
+        computer_choice = random.choice(["✂️ Scissors", "🪨 Rock", "📃 Paper"])
         computer_label.config(text=f"Computer chose: {computer_choice}")
         result = get_winner(user_choice, computer_choice)
         result_label.config(text=result)
@@ -37,13 +37,13 @@ def main():
     button_frame = tk.Frame(window)
     button_frame.pack(pady=20)
 
-    rock_button = tk.Button(button_frame, text="Rock", width=10, command=lambda: make_choice("rock"))
+    rock_button = tk.Button(button_frame, text="🪨 Rock", width=10, command=lambda: make_choice("🪨 Rock"))
     rock_button.grid(row=0, column=0, padx=5)
 
-    paper_button = tk.Button(button_frame, text="Paper", width=10, command=lambda: make_choice("paper"))
+    paper_button = tk.Button(button_frame, text="📃 Paper", width=10, command=lambda: make_choice("📃 Paper"))
     paper_button.grid(row=0, column=1, padx=5)
 
-    scissors_button = tk.Button(button_frame, text="Scissors", width=10, command=lambda: make_choice("scissors"))
+    scissors_button = tk.Button(button_frame, text="✂️ Scissors", width=10, command=lambda: make_choice("✂️ Scissors"))
     scissors_button.grid(row=0, column=2, padx=5)
 
     window.mainloop()
