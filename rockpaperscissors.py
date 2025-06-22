@@ -3,8 +3,8 @@ import tkinter as tk
 
 
 def main():
-    def get_winner(user_choice, computer_choice):
-        if computer_choice == user_choice:
+    def get_winner(user, computer):
+        if computer == user:
             return "It's a draw!"
 
         elif (
